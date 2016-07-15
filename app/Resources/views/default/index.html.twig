@@ -1,76 +1,688 @@
-{% extends 'base.html.twig' %}
 
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Variant HTML Builder by Medium Rare</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{ asset('css/flexslider.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/line-icons.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/elegant-icons.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/lightbox.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/theme.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css" media="all"/>
+
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+</head>
+<body>
+<div class="loader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="nav-container">
+    <nav class="centered-logo top-bar">
+        <div class="container">
+
+
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="logo logo-light" alt="Logo" src="{{ asset('bundles/framework/images/logo-light.png') }}">
+                    <img class="logo logo-dark" alt="Logo" src="{{ asset('bundles/framework/images/logo-dark.png') }}">
+                </div>
             </div>
 
-            <div id="status">
-                <p>
-                    <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>
 
-                    Your application is now ready. You can start working on it at:
-                    <code>{{ base_dir }}/</code>
-                </p>
+            <div class="row nav-menu">
+
+                <div class="col-sm-12 columns text-center">
+                    <ul class="menu">
+                        <li><a href="#">Home</a></li><li><a href="#">Why this logo</a></li>
+                        <li class="has-dropdown"><a href="#">Labs</a>
+                            <ul class="subnav">
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                            </ul>
+                        </li><li class="has-dropdown"><a href="#">Projects</a>
+                            <ul class="subnav">
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                                <li><a href="#">Example</a></li>
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
             </div>
 
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">
-                        <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href="http://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/book/page_creation.html">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
+            <div class="mobile-toggle">
+                <i class="icon icon_menu"></i>
             </div>
 
         </div>
-    </div>
-{% endblock %}
+        <div class="bottom-border"></div>
+    </nav>
+</div>
 
-{% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
+<div class="main-container">
+    <header class="fullscreen-element no-pad centered-text">
+        <div class="background-image-holder parallax-background overlay">
+            <img class="background-image" alt="Background Image" src="{{ asset('img/hero8.jpg') }}">
+        </div>
 
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
+        <div class="container align-vertical">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span class="text-white alt-font">Say Hello To Pivot</span>
+                    <h1 class="text-white">The biggest, baddest new template on the block <br>has arrived, build yours now.</h1>
+                    <p class="lead text-white">Tons of elements, Consistent style, Variant builder included.</p>
+                    <a target="_blank" href="http://www.mediumra.re/pivot/variant/builder.html" class="btn btn-primary btn-white">Customize Pivot</a>
+                    <a href="#" class="btn btn-primary btn-filled">Purchase Pivot</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
-{% endblock %}
+    <section class="video-inline">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <h1 class="space-bottom-medium">Our adv. video will be here</h1>
+                    <p class="lead space-bottom-medium">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="media-holder fullwidth-video">
+                        <iframe width="100%" height="315" src="http://www.youtube.com/embed/SZEflIVnhH8?showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen="">
+
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expanding-list">
+
+        <div class="background-image-holder parallax-background">
+            <img class="background-image" alt="Background Image" src="{{ asset('img/hero22.jpg') }}">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1>What are the benefits to join us</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <ul class="expanding-ul">
+                        <li>
+                            <div class="title">
+                                <i class="icon icon-pencil"></i>
+                                <span><strong>Bachelor of Design &amp; Communication</strong> RMIT University</span>
+                            </div>
+
+                            <div class="text-content">
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="title">
+                                <i class="icon icon-briefcase"></i>
+                                <span><strong>Junior Interaction Designer</strong> Corp &amp; Co.</span>
+                            </div>
+
+                            <div class="text-content">
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="title">
+                                <i class="icon icon-briefcase"></i>
+                                <span><strong>User Engagement Facilitator</strong> Leehan &amp; Tax</span>
+                            </div>
+
+                            <div class="text-content">
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="title">
+                                <i class="icon icon-trophy"></i>
+                                <span><strong>PhD. Contemporary Media</strong> University of Melbourne</span>
+                            </div>
+
+                            <div class="text-content">
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <h1>What will happen next</h1>
+                    <p class="lead">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="timeline-event">
+                        <div class="col-sm-6 col-md-push-6">
+                            <h2>23rd April</h2>
+                            <h5>The story begins</h5>
+                        </div>
+
+                        <div class="middle">
+                            <i class="icon icon-telescope"></i>
+                            <div class="vertical-line"></div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-pull-6">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="col-sm-6">
+                            <h2>25th April</h2>
+                            <h5>Our first major client</h5>
+                        </div>
+
+                        <div class="middle">
+                            <i class="icon icon-streetsign"></i>
+                            <div class="vertical-line"></div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="col-sm-6 col-md-push-6">
+                            <h2>30th June</h2>
+                            <h5>Agency Of The Year</h5>
+                        </div>
+
+                        <div class="middle">
+                            <i class="icon icon-heart"></i>
+                            <div class="vertical-line"></div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-pull-6">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="col-sm-6">
+                            <h2>31st July</h2>
+                            <h5>Global Domination</h5>
+                        </div>
+
+                        <div class="middle">
+                            <i class="icon icon-global"></i>
+                            <div class="vertical-line"></div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="stat-counters duplicatable-content">
+
+        <div class="background-image-holder parallax-background">
+            <img class="background-image" alt="Background Image" src="{{ asset('img/blur2.jpg') }}">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <h1>More About Us</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat feature">
+                        <div class="stat-bubble">
+                            <span>25</span>
+                        </div>
+                        <h3>Completed Projects</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat feature">
+                        <div class="stat-bubble">
+                            <span>86</span>
+                        </div>
+                        <h3>Satisfied Clients</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat feature">
+                        <div class="stat-bubble">
+                            <span>15</span>
+                        </div>
+                        <h3>Job Offers</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat feature">
+                        <div class="stat-bubble">
+                            <span>0</span>
+                        </div>
+                        <h3>Missed Deadlines</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="no-pad-bottom no-pad-top projects-gallery">
+
+        <div class="projects-wrapper clearfix">
+
+            <div class="projects-container">
+
+                <div class="col-md-4 col-sm-6 no-pad project print image-holder">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="{{ asset('img/project1.jpg') }}">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3 class="text-white"><strong>Identity</strong> Mockup</h3>
+                            <p class="text-white">
+                                Showcase your new identity with<br>this sleek mockup.
+                            </p>
+                            <a href="project-single.html" class="btn btn-primary btn-white">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 no-pad project branding image-holder">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="{{ asset('img/project4.jpg') }}">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3 class="text-white"><strong>Aurora</strong> Icon Kit</h3>
+                            <p class="text-white">
+                                A fresh and circular take on Apple's<br>iconic home screen.
+                            </p>
+                            <a href="project-single.html" class="btn btn-primary btn-white">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 no-pad project print image-holder">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="{{ asset('img/project6.jpg') }}">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3 class="text-white"><strong>Sketchbook</strong> Logos</h3>
+                            <p class="text-white">
+                                Present your hand-drawn logos on this<br>realistic sketchbook mockup.
+                            </p>
+                            <a href="project-single.html" class="btn btn-primary btn-white">See Project</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="team-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <h1>Leading Team will be here</h1>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <img alt="Team Member" class="background-image" src="{{ asset('img/team-small-1.png') }} ">
+                        <h5>Chip Mayer</h5>
+                        <span>Founder &amp; CEO</span><br>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_dribbble"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <img alt="Team Member" class="background-image" src="{{ asset('img/team-small-2.png') }} ">
+                        <h5>Carl Kennedy</h5>
+                        <span>Founder &amp; COO</span><br>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_tumblr"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <img alt="Team Member" class="background-image" src="{{ asset('img/team-small-3.png') }} ">
+                        <h5>Jen Forrest</h5>
+                        <span>Lead Designer</span><br>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <img alt="Team Member" class="background-image" src="{{ asset('img/team-small-4.png') }} ">
+                        <h5>Claire Taurus</h5>
+                        <span>Product Designer</span><br>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_pinterest"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <img alt="Team Member" class="background-image" src="{{ asset('img/team-small-5.png') }}">
+                        <h5>Amy Banks</h5>
+                        <span>Developer</span><br>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_googleplus"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_spotify"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="team-1-member">
+                        <a href="#"><img alt="Team Member" src="{{ asset('img/team-small-6.png') }} "></a>
+                        <h5>We're Hiring!</h5>
+                        <span>Apply Now</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-photo">
+
+        <div class="background-image-holder">
+            <img class="background-image" alt="Background Image" src="{{ asset('img/hero4.jpg') }}">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+                    <h1 class="text-white">Contact Us<br>
+                        We'd love to hear from you
+                    </h1>
+                </div>
+            </div>
+
+            <div class="photo-form-wrapper clearfix">
+                <form class="email-form">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-sm-offset-2 col-md-offset-3">
+                            <input class="form-name validate-required" type="text" placeholder="Your Name" name="name">
+                        </div>
+
+                        <div class="col-md-3 col-sm-4">
+                            <input class="form-email validate-required validate-email" type="text" placeholder="Your Email" name="email">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-8 col-sm-offset-2 col-md-offset-3 text-center">
+                            <input class="form-message validate-required" type="text" name="message" placeholder="Your Message">
+                            <input type="submit" class="send-form btn-filled" value="Send Form">
+                            <div class="form-success">
+                                <span class="text-white">Message sent - Thanks for your enquiry</span>
+                            </div>
+                            <div class="form-error">
+                                <span class="text-white">Please complete all fields correctly</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+</div>
+
+<div class="footer-container">
+
+    <footer class="social bg-secondary-1">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="text-white">Get In Touch</h1>
+                    <a href="#" class="text-white"><strong>hello@mrare.co</strong></a><br>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#">
+                                <i class="icon social_twitter"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon social_facebook"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon social_instagram"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon social_dribbble"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon social_tumblr"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="icon social_pinterest"></i>
+                            </a>
+                        </li>
+                    </ul><br>
+                    <span class="sub">© Copright 2014 <a href="#">Medium Rare</a> - All Rights Reserved</span>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery.plugin.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+<script src="{{ asset('js/smooth-scroll.min.js') }}"></script>
+<script src="{{ asset('js/skrollr.min.js') }}"></script>
+<script src="{{ asset('js/spectragram.min.js') }}"></script>
+<script src="{{ asset('js/scrollReveal.min.js') }}"></script>
+<script src="{{ asset('js/isotope.min.js') }}"></script>
+<script src="{{ asset('js/twitterFetcher_v10_min.js') }}"></script>
+<script src="{{ asset('js/lightbox.min.js') }}"></script>
+<script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
+</body>
+</html>
+				
