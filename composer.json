@@ -35,10 +35,6 @@
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
-        "compile": [
-            "bin/console assetic:dump",
-            "bin/console cache:clear --env=prod"
-        ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
